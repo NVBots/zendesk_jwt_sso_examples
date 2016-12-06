@@ -2,12 +2,14 @@
 # read more about this in the GitHub repository https://github.com/progrium/pyjwt
 
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 import time
 import jwt
 import uuid
 import urllib
 
+@login_required
 def index(request):
 
   payload = {
